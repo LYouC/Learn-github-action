@@ -7,8 +7,14 @@ jobs:
         - run: echo "Hello, World!"
         - run: ls
     show:
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-24.04
         steps:
-        - run: echo "Hello, World!"
-        - run: ls -a
-        - run: pwd
+
+        - name: 读取仓库内容
+          uses: actions/checkout@v4
+        
+        - name: 显示仓库内容
+          run: 
+            echo "Hello, World!"
+            ls -a
+            pwd
