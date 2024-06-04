@@ -1,8 +1,14 @@
 on: [push]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+    view:
+        runs-on: ubuntu-22.04
         steps:
         - run: echo "Hello, World!"
         - run: ls
+    show:
+        runs-on: ubuntu-22.04
+        steps:
+        - run: echo "Hello, World!"
+        - run: ls -a
+        - run: pwd
