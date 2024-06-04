@@ -1,20 +1,10 @@
+name: test docker action
 on: [push]
 
 jobs:
-    view:
-        runs-on: ubuntu-22.04
-        steps:
-        - run: echo "Hello, World!"
-        - run: ls
-    show:
+    build:
         runs-on: ubuntu-24.04
         steps:
-
-        - name: 读取仓库内容
-          uses: actions/checkout@v4
-        
-        - name: 显示仓库内容
-          run: ls -a
-
-        - run: echo "Hello, World!"
-        - run: ls
+          - uses: actions/checkout@v4
+          - name: Build the Docker image
+            run: ls -la
